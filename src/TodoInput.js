@@ -1,15 +1,28 @@
+import React, { useState } from "react";
+//rsc
+const TodoInput = () => {
+  const [text, setText] = useState("");
 
-//textarea + button
-function TodoInput(){
-    return(
-        <div>
-            <form action=".">
-            <label for="todoText">할일 작성</label>
-            <textarea id="todoText" name="todoText">
-                할일을 작성해 보세요!
-            </textarea>
-            <input type="submit" value="작성하기"/>
-        </form>
-        </div>
-    );
-}
+  const handleChange = (event) => {
+    setText(event.target.value);
+  };
+
+  const handleClick = () => {
+    alert(text);
+  };
+
+  return (
+    <div>
+      <textarea
+        value={text}
+        onChange={handleChange}
+        placeholder="오늘 할일을 입력하세요"
+        rows={1}
+        cols={40}
+      />
+      <button onClick={handleClick}>입력</button>
+    </div>
+  );
+};
+
+export default TodoInput;
