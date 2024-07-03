@@ -17,10 +17,11 @@ const TodoInput = () => {
       setTodos([...todos, newTodo]);
       setText("");
     } else {
-      alert("다시 입력해주세요");
+      alert("잘못된 입력입니다.");
     }
   };
 
+  //
   const handleDelete = (deletedTodo) => {
     const filteredTodos = todos.filter((todo) => todo !== deletedTodo);
     setTodos(filteredTodos);

@@ -28,6 +28,7 @@
     font-size: 18px;
     color: white;
     border: none;
+    margin-bottom: 4px;
     background-color:darkgoldenrod;
     box-shadow: 3px 3px 3px black;
     transition-duration: 0.3s;
@@ -42,11 +43,12 @@
 #todo-input-textarea{
     width: 400px;
     height: 40px;
-    font-size: 20px;
+    font-size: 22px;
     background-color:cornsilk;
     resize: none;
     color: black;
     border: none;
-    border-bottom: 4px solid #0000007e;
+    border-bottom: 5px solid #0000007e;
+
     outline: none;
 }
