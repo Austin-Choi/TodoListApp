@@ -1,21 +1,29 @@
 import React from "react";
 
-const TodoItem = ({ todo, onDelete }) => {
+const TodoItem = ({ todo, onDelete, onToggleComplete }) => {
   const handleDeleteClick = () => {
     onDelete(todo);
   };
+
+  const handleToggleCompleteClick = () => {
+    onToggleComplete(todo);
+  };
+
   return (
     <div>
       {todo.completed ? (
-        <img src="assets/done.png" alt="done" />
+        <input type="checkbox" checked disabled />
       ) : (
-        <img src="assets/undone.png" alt="not done" />
+        <input type="checkbox" disabled />
       )}{" "}
       <label
-        style={{ textDecoration: todo.completed ? "Line-through" : "none" }}
+        style={{ textDecoration: todo.completed ? "line-through" : "none" }}
       >
         할 일 : {todo.text}
       </label>
+      <button onClick={handleToggleCompleteClick}>
+        {todo.completed ? "완료됨" : "완료하기"}
+      </button>
       <button onClick={handleDeleteClick}>삭제</button>
     </div>
   );

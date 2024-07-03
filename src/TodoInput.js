@@ -2,17 +2,15 @@ import React, { useState } from "react";
 import TodoList from "./TodoList";
 
 const TodoInput = () => {
-  //여기서 define도 하는 것
   const [text, setText] = useState("");
-  //const [todoItem, setTodoItem] = useState({ text: "", completed: false });
   const [todos, setTodos] = useState([]);
+
   const handleChange = (event) => {
     setText(event.target.value);
   };
 
   const handleClick = () => {
     if (text.trim() !== "") {
-      //setTodoItem({ text: text, completed: false });
       const newTodo = { text: text, completed: false };
       setTodos([...todos, newTodo]);
       setText("");
@@ -26,6 +24,16 @@ const TodoInput = () => {
     setTodos(filteredTodos);
   };
 
+  const handleToggleComplete = (toggledTodo) => {
+    const updatedTodos = todos.map((todo) =>
+      todo === toggledTodo ? { ...todo, completed: !todo.completed } : todo
+    );
+    setTodos(updatedTodos);
+  };
+
+  // 완료된 항목을 상단에 정렬
+  const sortedTodos = todos.sort((a, b) => b.completed - a.completed);
+
   return (
     <div>
       <textarea
@@ -37,8 +45,11 @@ const TodoInput = () => {
       />
       <button onClick={handleClick}>입력</button>
       <br />
-      {/* {todoItem.text && <TodoItem todo={todoItem} />} */}
-      <TodoList todos={todos} onDelete={handleDelete} />
+      <TodoList
+        todos={sortedTodos}
+        onDelete={handleDelete}
+        onToggleComplete={handleToggleComplete}
+      />
     </div>
   );
 };
