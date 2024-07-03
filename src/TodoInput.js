@@ -21,6 +21,11 @@ const TodoInput = () => {
     }
   };
 
+  const handleDelete = (deletedTodo) => {
+    const filteredTodos = todos.filter((todo) => todo !== deletedTodo);
+    setTodos(filteredTodos);
+  };
+
   return (
     <div>
       <textarea
@@ -33,7 +38,7 @@ const TodoInput = () => {
       <button onClick={handleClick}>입력</button>
       <br />
       {/* {todoItem.text && <TodoItem todo={todoItem} />} */}
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onDelete={handleDelete} />
     </div>
   );
 };
