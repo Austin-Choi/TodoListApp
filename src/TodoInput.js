@@ -1,14 +1,24 @@
 import React, { useState } from "react";
-//rsc
-const TodoInput = () => {
-  const [text, setText] = useState("");
+import TodoList from "./TodoList";
 
+const TodoInput = () => {
+  //여기서 define도 하는 것
+  const [text, setText] = useState("");
+  //const [todoItem, setTodoItem] = useState({ text: "", completed: false });
+  const [todos, setTodos] = useState([]);
   const handleChange = (event) => {
     setText(event.target.value);
   };
 
   const handleClick = () => {
-    alert(text);
+    if (text.trim() !== "") {
+      //setTodoItem({ text: text, completed: false });
+      const newTodo = { text: text, completed: false };
+      setTodos([...todos, newTodo]);
+      setText("");
+    } else {
+      alert("다시 입력해주세요");
+    }
   };
 
   return (
@@ -21,6 +31,9 @@ const TodoInput = () => {
         cols={40}
       />
       <button onClick={handleClick}>입력</button>
+      <br />
+      {/* {todoItem.text && <TodoItem todo={todoItem} />} */}
+      <TodoList todos={todos} />
     </div>
   );
 };
