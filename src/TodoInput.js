@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import TodoList from "./TodoList";
+import "./TodoInput.css";
+import "./index.css";
 
 const TodoInput = () => {
   const [text, setText] = useState("");
@@ -35,15 +37,23 @@ const TodoInput = () => {
   const sortedTodos = todos.sort((a, b) => b.completed - a.completed);
 
   return (
-    <div>
-      <textarea
-        value={text}
-        onChange={handleChange}
-        placeholder="오늘 할일을 입력하세요"
-        rows={1}
-        cols={40}
-      />
-      <button onClick={handleClick}>입력</button>
+    <div className="container">
+      <h1 className="todo-text">오늘 할일을 체크해요!</h1>
+      <br />
+      <div className="todo-input-form">
+        <textarea
+          id="todo-input-textarea"
+          value={text}
+          onChange={handleChange}
+          placeholder="오늘 할일을 입력하세요"
+          rows={1}
+          cols={40}
+          spellCheck="false"
+        />
+        <button className="todo-button" onClick={handleClick}>
+          입력
+        </button>
+      </div>
       <br />
       <TodoList
         todos={sortedTodos}
