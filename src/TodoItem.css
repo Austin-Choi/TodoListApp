@@ -12,13 +12,13 @@
 .todo-item-text{
     text-align: left;
     font-size: 20px;
-
 }
 
 .todo-item-buttons{
     align-items: center;
     justify-content: space-between;
     margin-top: 5px;
+    margin-bottom: 5px;
     margin-left: 5px;
 }
 
@@ -31,7 +31,7 @@
     background-color:darkgoldenrod;
     margin-left: 10px;
     border-radius: 5%;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 2px 2px 2px black;
     transition-duration: 0.3s;
 }
 .todo-item-button:active{

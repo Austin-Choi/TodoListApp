@@ -40,7 +40,6 @@ const TodoInput = () => {
   return (
     <div className="container">
       <h1 className="todo-text">오늘 할일을 체크해요!</h1>
-      <br />
       <div className="todo-input-form">
         <textarea
           id="todo-input-textarea"
