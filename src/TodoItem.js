@@ -16,7 +16,7 @@ const TodoItem = ({ todo, onDelete, onToggleComplete }) => {
         <input type="checkbox" checked disabled />
       ) : (
         <input type="checkbox" disabled />
-      )}{" "}
+      )}
       <label
         className="todo-item-text"
         style={{ textDecoration: todo.completed ? "line-through" : "none" }}
