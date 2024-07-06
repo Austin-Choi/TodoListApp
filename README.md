@@ -13,9 +13,13 @@ localhost:3000에 접속한다.
 
 ## 프로젝트 주요기능
 
+
 1. 할일을 입력하고 할일 목록에 표시합니다.
 
+<img width="800" alt="스크린샷 2024-07-06 오후 12 04 10" src="https://github.com/Austin-Choi/todolistapp/assets/33799946/81b9f51c-6360-44b3-a249-5aea349ab568">
+
 2. 할일이 생성되면 완료하기 버튼을 눌러 취소선을 긋고 완료됨 표시가 뜹니다.
+<img width="800" alt="스크린샷 2024-07-06 오후 12 04 50" src="https://github.com/Austin-Choi/todolistapp/assets/33799946/c2b07f28-a7e2-464a-907c-346757acb0de">
 
 3. 각 항목은 자유롭게 삭제할 수 있습니다.
 
