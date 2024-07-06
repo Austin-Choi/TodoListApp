@@ -5,8 +5,10 @@ React로 todoListApp 구현
 ## 프로젝트 설치
 
 ide로 터미널을 열고
+npm install
 npm run build
-serve -g build
+npm install -g serve
+serve -s build
 를 실행한 후
 
 localhost:3000에 접속한다.
