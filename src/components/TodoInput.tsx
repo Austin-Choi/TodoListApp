@@ -1,13 +1,20 @@
-import React, { useState, useEffect } from "react";
-import TodoList from "./TodoList";
-import "./TodoInput.css";
-import "./index.css";
+import React, { useState, useEffect, ChangeEvent } from "react";
+import TodoList from "../containers/TodoList.tsx";
+import "../styles/TodoInput.css";
+import "../styles/index.css";
+
+//타입 지정 추가
+interface Todo {
+  text: string;
+  completed: boolean;
+  id: string;
+}
 
 const TodoInput = () => {
-  const [text, setText] = useState("");
-  const [todos, setTodos] = useState(() => {
+  const [text, setText] = useState<string>("");
+  const [todos, setTodos] = useState<Todo[]>(() => {
     //localStorage에서 초기 todo를 불러옴
-    const savedTodos = localStorage.getItem("todos");
+    const savedTodos:string = localStorage.getItem("todos");
     if (savedTodos) {
       try {
         return JSON.parse(savedTodos);
@@ -21,14 +28,14 @@ const TodoInput = () => {
     } else return [];
   });
 
-  const handleChange = (event) => {
+  const handleChange = (event: ChangeEvent<HTMLTextAreaElement>):void => {
     setText(event.target.value);
   };
 
-  const handleClick = () => {
+  const handleClick = ():void => {
     if (text.trim() !== "") {
-      const id = Date.now().toString();
-      const newTodo = { text: text, completed: false, id: id };
+      const id:string = Date.now().toString();
+      const newTodo:Todo = { text: text, completed: false, id: id };
       setTodos([...todos, newTodo]);
       setText("");
     } else {
@@ -63,7 +70,7 @@ const TodoInput = () => {
   // 완료된 항목을 상단에 정렬
   let sortedTodos;
   if (todos) {
-    sortedTodos = todos.sort((a, b) => b.completed - a.completed);
+    sortedTodos = todos.sort((a, b) => Number(b.completed) - Number(a.completed));
   } else sortedTodos = todos;
 
   return (

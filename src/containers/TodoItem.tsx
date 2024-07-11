@@ -1,12 +1,12 @@
-import React from "react";
-import "./TodoItem.css";
+import React, { FC } from "react";
+import "../styles/TodoItem.css";
 
 const TodoItem = ({ todo, onDelete, onToggleComplete }) => {
-  const handleDeleteClick = () => {
+  const handleDeleteClick = ():void => {
     onDelete(todo);
   };
 
-  const handleToggleCompleteClick = () => {
+  const handleToggleCompleteClick = ():void => {
     onToggleComplete(todo);
   };
 

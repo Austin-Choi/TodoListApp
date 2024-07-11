@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import TodoInput from "./TodoInput";
+import TodoInput from "../components/TodoInput";
 
 // Mock localStorage
 const localStorageMock = (() => {

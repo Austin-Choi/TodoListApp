@@ -1,6 +1,6 @@
 import React from "react";
-import TodoItem from "./TodoItem";
-import "./TodoInput.css";
+import TodoItem from "./TodoItem.tsx";
+import "../styles/TodoInput.css";
 
 const TodoList = ({ todos, onDelete, onToggleComplete }) => {
   return (
