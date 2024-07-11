@@ -53,12 +53,12 @@ const TodoInput = () => {
   }, [todos]);
 
   //
-  const handleDelete = (deletedTodo) => {
+  const handleDelete = (deletedTodo: Todo): void => {
     const filteredTodos = todos.filter((todo) => todo.id !== deletedTodo.id);
     setTodos(filteredTodos);
   };
 
-  const handleToggleComplete = (toggledTodo) => {
+  const handleToggleComplete = (toggledTodo: Todo): void => {
     const updatedTodos = todos.map((todo) =>
       todo.id === toggledTodo.id
         ? { ...todo, completed: !todo.completed }
