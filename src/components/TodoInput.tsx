@@ -6,7 +6,7 @@ import "../styles/index.css";
 //타입 지정 추가
 interface Todo {
   text: string;
-  completed: boolean;
+  completed: true | false;
   id: string;
 }
 
@@ -68,10 +68,18 @@ const TodoInput = () => {
   };
 
   // 완료된 항목을 상단에 정렬
-  let sortedTodos;
-  if (todos) {
-    sortedTodos = todos.sort((a, b) => Number(b.completed) - Number(a.completed));
-  } else sortedTodos = todos;
+  // let sortedTodos;
+  // if (todos) {
+  //   sortedTodos = todos.sort((a, b) => Number(b.completed) - Number(a.completed));
+  // } else sortedTodos = todos;
+
+  // 1. 최적화 방안
+  // todos가 변경될 때만 정렬하도록 useEffect 사용
+  const [sortedTodos, setSortedTodos] = useState<Todo[]>([]);
+  useEffect(()=>{
+    const sorted = [...todos].sort((a,b)=>Number(b.completed) - Number(a.completed));
+    setSortedTodos(sorted);
+  }, [todos]);
 
   return (
     <div className="container">
