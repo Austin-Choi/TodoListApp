@@ -2,6 +2,8 @@ import React from "react";
 import TodoItem from "./TodoItem.tsx";
 import "../styles/TodoInput.css";
 
+//index로 읽을것이 아니라 todo의 id값으로
+//변화된 값을 잘 추적할 수 있게 최적화
 const TodoList = ({ todos, onDelete, onToggleComplete }) => {
   return (
     <div>
