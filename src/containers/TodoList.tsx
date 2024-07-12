@@ -6,9 +6,9 @@ const TodoList = ({ todos, onDelete, onToggleComplete }) => {
   return (
     <div>
       <h2 className="todo-text">할일 목록</h2>
-      {todos.map((todo, index) => (
+      {todos.map((todo) => (
         <TodoItem
-          key={index}
+          key={todo.id}
           todo={todo}
           onDelete={onDelete}
           onToggleComplete={onToggleComplete}
