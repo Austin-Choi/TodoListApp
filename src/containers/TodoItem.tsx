@@ -29,7 +29,7 @@ const TodoItem = ({ todo, onDelete, onToggleComplete }) => {
       </label>
       <div className="todo-item-buttons">
         <button
-          className={`todo-item-button ${todo.completed ? "completed":""}`}
+          className={`todo-item-button ${todo.completed ? "completed-button":""}`}
           onClick={handleToggleCompleteClick}
           disabled={todo.completed}
         >
