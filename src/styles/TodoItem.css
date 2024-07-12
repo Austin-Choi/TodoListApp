@@ -39,3 +39,16 @@
     margin-top: 4px;
     box-shadow: none;
 }
+
+.completed {
+    text-decoration: line-through;
+  }
+  
+  .completed-button {
+    background: darkseagreen;
+  }
+  
+  .incomplete-button {
+    background: darkgoldenrod;
+  }
+  
